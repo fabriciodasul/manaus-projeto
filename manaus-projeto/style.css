@@ -1,0 +1,539 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   VARIÁVEIS DA IDENTIDADE VISUAL
+========================================= */
+
+:root {
+    --color-background: rgb(11, 15, 14);
+
+    --color-surface: rgb(21, 28, 26);
+
+    --color-surface-elevated: rgb(34, 44, 41);
+
+    --color-text-primary: rgb(232, 240, 236);
+
+    --color-text-secondary: rgb(167, 180, 175);
+
+    --color-border: rgb(48, 60, 55);
+
+    --color-green: rgb(57, 217, 138);
+
+    --color-blue: rgb(115, 183, 242);
+
+    --color-orange: rgb(245, 158, 11);
+
+    --color-warning-background: rgb(66, 45, 18);
+
+    --color-critical: rgb(139, 132, 155);
+
+    --color-radius: 18px;
+}
+
+
+/* =========================================
+   BASE
+========================================= */
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(25, 85, 65, 0.18),
+            transparent 35%
+        ),
+        var(--color-background);
+
+    color: var(--color-text-primary);
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   CONTAINER PRINCIPAL
+========================================= */
+
+.app-container {
+    width: 100%;
+    max-width: 620px;
+
+    margin: 0 auto;
+
+    padding: 24px 20px 28px;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.app-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 16px;
+
+    padding-bottom: 8px;
+
+    border-bottom: 1px solid var(--color-border);
+}
+
+.brand {
+    display: inline-flex;
+
+    align-items: center;
+
+    text-decoration: none;
+}
+
+.brand-logo {
+    display: block;
+
+    width: 170px;
+    height: auto;
+
+    object-fit: contain;
+}
+
+.live-status {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 8px;
+
+    padding: 7px 12px;
+
+    border: 1px solid rgba(57, 217, 138, 0.35);
+
+    border-radius: 999px;
+
+    color: var(--color-green);
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background-color: var(--color-green);
+
+    box-shadow: 0 0 10px rgba(57, 217, 138, 0.6);
+}
+
+.live-status.offline {
+    border-color: rgba(139, 132, 155, 0.4);
+
+    color: var(--color-critical);
+}
+
+.live-status.offline .live-dot {
+    background-color: var(--color-critical);
+
+    box-shadow: none;
+}
+
+
+/* =========================================
+   INTRODUÇÃO
+========================================= */
+
+.intro-section {
+    padding: 30px 0 24px;
+}
+
+.location {
+    display: flex;
+
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 10px;
+
+    color: var(--color-text-secondary);
+
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.intro-section h1 {
+    max-width: 540px;
+
+    font-size: clamp(2rem, 7vw, 2.8rem);
+
+    font-weight: 800;
+
+    line-height: 1.08;
+
+    letter-spacing: -1.2px;
+}
+
+.intro-section h1 span {
+    color: var(--color-green);
+}
+
+.intro-description {
+    margin-top: 14px;
+
+    color: var(--color-text-secondary);
+
+    font-size: 1rem;
+}
+
+
+/* =========================================
+   CARDS GERAIS
+========================================= */
+
+.card {
+    width: 100%;
+
+    padding: 24px;
+
+    border: 1px solid var(--color-border);
+
+    border-radius: var(--color-radius);
+
+    background-color: var(--color-surface);
+}
+
+.card-label {
+    color: var(--color-text-secondary);
+
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.card-divider {
+    width: 100%;
+    height: 1px;
+
+    margin: 20px 0;
+
+    background-color: var(--color-border);
+}
+
+
+/* =========================================
+   CARD DE TEMPERATURA
+========================================= */
+
+.weather-card {
+    margin-bottom: 20px;
+}
+
+.card-heading {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 12px;
+}
+
+.temperature-value {
+    margin-top: 12px;
+
+    font-size: clamp(3.5rem, 15vw, 5rem);
+
+    font-weight: 800;
+
+    line-height: 0.95;
+
+    letter-spacing: -2px;
+}
+
+.weather-icon {
+    color: var(--color-orange);
+
+    font-size: 4.5rem;
+
+    line-height: 1;
+}
+
+.feels-like {
+    margin-top: 20px;
+
+    color: var(--color-text-secondary);
+
+    font-size: 1rem;
+}
+
+.feels-like strong {
+    color: var(--color-text-primary);
+}
+
+.weather-message {
+    margin-top: 14px;
+
+    color: var(--color-orange);
+
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+.weather-condition {
+    display: flex;
+
+    align-items: center;
+    gap: 10px;
+
+    color: var(--color-text-secondary);
+
+    font-size: 0.95rem;
+}
+
+
+/* =========================================
+   CARD DE QUALIDADE DO AR
+========================================= */
+
+.air-card {
+    margin-bottom: 28px;
+
+    background-color: var(--color-warning-background);
+
+    border-color: rgba(245, 158, 11, 0.65);
+}
+
+.air-card-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+}
+
+.alert-badge {
+    padding: 6px 11px;
+
+    border: 1px solid rgba(245, 158, 11, 0.5);
+
+    border-radius: 999px;
+
+    color: var(--color-orange);
+
+    font-size: 0.75rem;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+.air-message {
+    margin-top: 20px;
+
+    font-size: clamp(1.5rem, 6vw, 2rem);
+
+    line-height: 1.15;
+}
+
+.pm-value {
+    display: flex;
+
+    align-items: baseline;
+    gap: 8px;
+
+    margin-top: 20px;
+
+    font-size: clamp(3rem, 13vw, 4.5rem);
+
+    font-weight: 800;
+
+    line-height: 1;
+}
+
+.pm-value small {
+    color: var(--color-text-secondary);
+
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.pm-description {
+    margin-top: 10px;
+
+    color: var(--color-text-secondary);
+
+    font-size: 0.95rem;
+}
+
+.air-summary {
+    display: flex;
+
+    align-items: flex-start;
+    gap: 12px;
+
+    color: rgb(244, 217, 165);
+
+    font-size: 0.95rem;
+}
+
+
+/* =========================================
+   CARD DE RECOMENDAÇÃO
+========================================= */
+
+.recommendation-card {
+    margin-bottom: 28px;
+
+    border-color: rgba(57, 217, 138, 0.8);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18, 69, 51, 0.55),
+            rgba(21, 28, 26, 1)
+        );
+}
+
+.recommendation-heading {
+    display: flex;
+
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 18px;
+}
+
+.recommendation-icon {
+    color: var(--color-green);
+
+    font-size: 1.8rem;
+}
+
+.recommendation-heading h2 {
+    color: var(--color-green);
+
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+.recommendation-main {
+    font-size: 1.1rem;
+    font-weight: 700;
+
+    line-height: 1.5;
+}
+
+.recommendation-secondary {
+    margin-top: 14px;
+
+    color: var(--color-text-secondary);
+
+    font-size: 0.95rem;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.app-footer {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    color: var(--color-text-secondary);
+
+    font-size: 0.78rem;
+}
+
+.app-footer p {
+    display: flex;
+
+    align-items: center;
+    gap: 7px;
+}
+
+.footer-divider {
+    width: 1px;
+    height: 20px;
+
+    background-color: var(--color-border);
+}
+
+.footer-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background-color: var(--color-green);
+}
+
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (min-width: 768px) {
+
+    .app-container {
+        padding: 36px 28px 40px;
+    }
+
+    .intro-section {
+        padding-top: 42px;
+    }
+
+    .card {
+        padding: 30px;
+    }
+
+    .brand-logo {
+        width: 175px;
+    }
+
+    .temperature-value {
+        font-size: 5rem;
+    }
+
+    .air-message {
+        font-size: 2rem;
+    }
+
+}
+
+
+/* =========================================
+   ACESSIBILIDADE
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
+    }
+}

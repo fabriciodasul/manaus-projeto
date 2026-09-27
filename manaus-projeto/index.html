@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Acompanhe a temperatura e a qualidade do ar em Manaus."
+    >
+
+    <title>agoniadoz | Manaus agora</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- O JavaScript será desenvolvido por você -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <main class="app-container">
+
+        <!-- HEADER -->
+        <header class="app-header">
+
+            <a href="#" class="brand">
+                <img
+                    src="assets/images/logo-agoniadoz.png"
+                    alt="Logo agoniadoz"
+                    class="brand-logo"
+                >
+            </a>
+
+            <span class="live-status" id="liveStatus">
+                <span class="live-dot" id="liveDot"></span>
+                <span class="live-text" id="liveText">AO VIVO</span>
+            </span>
+
+        </header>
+
+
+        <!-- INTRODUÇÃO -->
+        <section class="intro-section">
+
+            <p class="location">
+                <span aria-hidden="true">📍</span>
+                Manaus, AM
+            </p>
+
+            <h1>
+                Como tá Manaus agora,
+                <span>maninho?</span>
+            </h1>
+
+            <p class="intro-description">
+                Olha só as condições atuais.
+            </p>
+
+        </section>
+
+
+        <!-- TEMPERATURA -->
+        <section class="weather-card card">
+
+            <div class="card-heading">
+
+                <div>
+                    <p class="card-label">Temperatura</p>
+
+                    <p class="temperature-value">
+                        <span id="temperatura">34</span>°C
+                    </p>
+                </div>
+
+                <div class="weather-icon" aria-hidden="true">
+                    ☀
+                </div>
+
+            </div>
+
+            <p class="feels-like">
+                Sensação térmica:
+                <strong>
+                    <span id="sensacao-termica">39</span>°C
+                </strong>
+            </p>
+
+            <p class="weather-message">
+                Eita, hoje tá quente que só!
+            </p>
+
+            <div class="card-divider"></div>
+
+            <p class="weather-condition">
+                <span aria-hidden="true">🌡</span>
+                Muito quente
+            </p>
+
+        </section>
+
+
+        <!-- QUALIDADE DO AR -->
+        <section class="air-card card air-warning">
+
+            <div class="air-card-header">
+
+                <div>
+                    <p class="card-label">Qualidade do ar</p>
+                </div>
+
+                <span class="alert-badge">
+                    ATENÇÃO
+                </span>
+
+            </div>
+
+            <h2 class="air-message">
+                Fica ligado, maninho.
+            </h2>
+
+            <p class="pm-value">
+                <span id="pm25">37</span>
+                <small>µg/m³</small>
+            </p>
+
+            <p class="pm-description">
+                Concentração de partículas PM2.5
+            </p>
+
+            <div class="card-divider"></div>
+
+            <p class="air-summary">
+                <span aria-hidden="true">⚠</span>
+                O ar pede um pouco mais de cuidado hoje.
+            </p>
+
+        </section>
+
+
+        <!-- RECOMENDAÇÃO -->
+        <section class="recommendation-card card">
+
+            <div class="recommendation-heading">
+
+                <span class="recommendation-icon"
+                      aria-hidden="true">
+                    ♡
+                </span>
+
+                <h2>
+                    Dica do agoniadoz
+                </h2>
+
+            </div>
+
+            <p class="recommendation-main">
+                Se puder, evita atividade pesada ao ar livre
+                nesse calor, beleza?
+            </p>
+
+            <p class="recommendation-secondary">
+                Pessoas com problemas respiratórios devem
+                redobrar os cuidados.
+            </p>
+
+        </section>
+
+
+        <!-- RODAPÉ -->
+        <footer class="app-footer">
+
+            <p>
+                <span aria-hidden="true">↻</span>
+                Atualizado há 2 minutos
+            </p>
+
+            <span class="footer-divider"></span>
+
+            <p>
+                <span class="footer-dot"></span>
+                Dados reais
+            </p>
+
+        </footer>
+
+    </main>
+
+</body>
+
+</html>
