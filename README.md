@@ -10,7 +10,7 @@ O agoniadoz existe pra fechar essa distância entre o dado e a decisão: pega te
 
 ## Demo
 
-`[link do deploy na Vercel]`
+`https://manaus-projeto-1ln6n55u4-fabriciodasul.vercel.app/`
 
 ## O que o app faz
 
